@@ -31,6 +31,7 @@
           
           Each MIPS instruction is 32 bits and the instruction of binary number is decoded to determine the operation.  
           There are three formats: R, I and J. The decode menthod is slightly different for each format.
+         ![Instruction types](MIPS_types.png)
           
    3. Execute  
    
@@ -45,4 +46,5 @@
           Operation result is updated to the register.
           
  * these stages are executed in a single cycle.
+ * The below is the datapath 
  
