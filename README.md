@@ -46,5 +46,9 @@
           Operation result is updated to the register.
           
  * these stages are executed in a single cycle.
- * The below is the datapath 
+ * The below is datapath that shows a series of process in single cycle, containing all five steps. Control logic adjusts control signal to determine whether each stage performs the operation or not.  
  
+     ![datapath](datapath.png)
+     
+## pipeline
+
