@@ -45,10 +45,28 @@
      
           Operation result is updated to the register.
           
- * these stages are executed in a single cycle.
+ * These stages are executed in a single cycle.
  * The below is datapath that shows a series of process in single cycle, containing all five steps. Control logic adjusts control signal to determine whether each stage performs the operation or not.  
  
      ![datapath](datapath.png)
      
 ## pipeline
-
+  * Pipeline is a structure that the output of the current data processing go into input of next stage. These linked data processing steps are performed simultaneously, thereby improving efficiency.
+  * Latches are temporary storage for the state of the pipeline stages and hold input/output value for the next cycle. At the beginning of the cycle, latched register values are flushed from output latches to input latches.
+       ![latch](latch.png)
+  * Data dependency  
+    Two instructions in the pipeline use the same register values. it has three types: RAW, WAR and WAW.  
+       ![data dependency](data_dependency.png)  
+    To solve data dependency, detect and forward data to dependent instruction.  
+  * Control dependency  
+    Fetched instruction following instructions to change PC values, such as j, jal, jr, beq, and bne has control dependency because it is fetched from wrong PC value.
+    | Type           | Direction at fetch time | Number of possible next fetch addresses |
+    | -------------- |:-----------------------:| ---------------------------------------:|
+    | conditional    |         Unknown         |                       2                 |
+    | unconditional  |       Always taken      |                       1                 |
+    | call           |       Always taken      |                       1                 |
+    | return         |       Always taken      |                      Many               |
+    | indirect       |       Always taken      |                      Many               |  
+    
+    To handle control dependency, stall the pipeline until we know the next fetch address
+    
