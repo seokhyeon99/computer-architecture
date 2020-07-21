@@ -56,7 +56,7 @@
        ![latch](latch.png)
   * Data dependency   
     Two instructions in the pipeline use the same register values. it has three types: RAW, WAR and WAW.  
-       ![data dependency](data_dependency.png)  
+     ![data dependency](data_dependency.png)  
     To solve data dependency, detect and forward data to dependent instruction.  
   * Control dependency  
     Fetched instruction following instructions to change PC values, such as j, jal, jr, beq, and bne has control dependency because it is fetched from wrong PC value.
@@ -70,3 +70,13 @@
     
     To handle control dependency, stall the pipeline until we know the next fetch address
     
+## cache
+  * Cache is a small memory located inside or next to CPU to speed up access to large main memory. Copying data into the cache provides faster access to the data without calculation or access time.
+         ![cache](cache.png)  
+
+  * Direct Mapped Cache  
+   
+          Multiple addresses in DRAMs consist of index fields, tag fields, offset fields, and data fields in a multi-to-one manner that correspond to one address in cache memory.Some of the memory addresses are split into cache indexes, and the locations stored in each address within cache memory are fixed. This method is quick to find a specific memory address within the cache, but the miss may continue to occur when adjacent memory with the same index is still accessed, so use the valid variable to ensure that the valid values are stored. The index determines the number of blocks, the offset indicates how many words are in the block, and the tag is used to separate the number of main memory that can be mapped to a single cache block.
+          
+    ![direct mapped cache](diret_mapped_cache.png)  
+  
