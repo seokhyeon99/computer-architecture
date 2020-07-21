@@ -56,7 +56,7 @@
        ![latch](latch.png)
   * Data dependency   
     Two instructions in the pipeline use the same register values. it has three types: RAW, WAR and WAW.  
-     ![data dependency](data_dependency.png)  
+     ![data dependency](data_dependency.PNG)  
     To solve data dependency, detect and forward data to dependent instruction.  
   * Control dependency  
     Fetched instruction following instructions to change PC values, such as j, jal, jr, beq, and bne has control dependency because it is fetched from wrong PC value.
