@@ -54,7 +54,7 @@
   * Pipeline is a structure that the output of the current data processing go into input of next stage. These linked data processing steps are performed simultaneously, thereby improving efficiency.
   * Latches are temporary storage for the state of the pipeline stages and hold input/output value for the next cycle. At the beginning of the cycle, latched register values are flushed from output latches to input latches.
        ![latch](latch.png)
-  * Data dependency   
+  * Data dependency  
     Two instructions in the pipeline use the same register values. it has three types: RAW, WAR and WAW.  
        ![data dependency](data_dependency.png)  
     To solve data dependency, detect and forward data to dependent instruction.  
